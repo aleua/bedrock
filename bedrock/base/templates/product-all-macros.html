@@ -51,7 +51,11 @@
         </caption>
         <thead>
           <tr>
-            <th scope="col">{{ _('Language') }}</th>
+            <th scope="col" rowspan="2" class="language">{{ _('Language') }}</th>
+            <th scope="col" colspan="3" class="recommended">{{ _('Recommended') }}</th>
+            <th scope="col" colspan="3" class="legacy">{{ _('Legacy') }}</th>
+          </tr>
+          <tr>
             {% for p_name, p_label in platforms %}
               <th scope="col" class="{{ p_name }}">{{ p_label|replace('\n', '<br>'|safe) }}</th>
             {% endfor %}

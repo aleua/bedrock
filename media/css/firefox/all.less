@@ -83,12 +83,31 @@
     }
     table {
         width: 100%;
+        th, td {
+            padding: 10px;
+        }
+        .win64,
+        .linux64,
+        .osx {
+            background-color: rgba(255, 255, 255, .5);
+        }
         thead {
             th {
+                text-align: center;
                 white-space: nowrap;
+                &.language {
+                    vertical-align: bottom;
+                }
+                &.recommended {
+                    background-color: rgba(255, 255, 255, .5);
+                }
+                &[colspan] {
+                    padding-bottom: 0;
+                    font-weight: bold;
+                }
             }
-            th, td {
-                padding: 10px 0;
+            tr:last-child th {
+                padding-top: 0;
             }
         }
         tbody {
@@ -102,9 +121,6 @@
             }
             tr:target th {
                 padding-left: 10px;
-            }
-            th, td {
-                padding: 10px 10px 10px 0;
             }
             th {
                 font-weight: normal;
@@ -120,10 +136,9 @@
             text-shadow: 0 -1px #fff;
         }
         .download {
-            padding: 10px 0;
             a {
                 display: block;
-                padding: 10px 10px 10px 45px;
+                padding: 10px 0 10px 45px;
                 background: transparent url('/media/img/firefox/all/download-icons-desktop.png') left top no-repeat;
             }
 
